@@ -1,0 +1,10 @@
+# .github/metadata.yaml
+description: "Byte x collection bridge for Swift — UTF-8 decode of a Collection.Protocol byte-collection to Swift.String via .utf8String, built on swift-byte-primitives and swift-collection-primitives."
+topics:
+  - primitives
+  - collection
+  - byte
+  - swift
+homepage: "https://swift-institute.org"
+readme:
+  family: E
