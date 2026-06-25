@@ -3,7 +3,7 @@
 // Bridges a byte-collection (`Collection.Protocol where Element == Byte`) to a
 // UTF-8 `Swift.String`. This lives in the Standard Library Integration module
 // because it materializes a stdlib `Swift.String` from the institute `Byte`
-// and `Collection.Protocol` types ([MOD-010]): the institute layer stays
+// and `Collection.Protocol` types: the institute layer stays
 // stdlib-free, and the bridge to `Swift.String` is isolated here.
 //
 // Each element is unwrapped through `Byte`'s stored `underlying: UInt8` and

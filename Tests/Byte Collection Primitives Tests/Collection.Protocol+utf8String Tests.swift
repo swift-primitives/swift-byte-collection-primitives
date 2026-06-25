@@ -5,7 +5,7 @@ import Testing
 //
 // Compound name backticked per the institute test-suite convention
 // (matches swift-byte-serializer-primitives' `Byte.Serializer Tests` —
-// backticked compound names are accepted by [SWIFT-TEST-002]; bare compound
+// backticked compound names are accepted; bare compound
 // names are not).
 
 @Suite
