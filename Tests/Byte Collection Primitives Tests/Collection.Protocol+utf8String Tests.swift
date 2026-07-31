@@ -12,6 +12,7 @@ import Testing
 struct `Collection.Protocol utf8String Tests` {
     @Suite struct Unit {}
     @Suite struct `Edge Case` {}
+    @Suite struct Integration {}
 }
 
 // MARK: - Unit Tests
