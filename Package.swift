@@ -1,15 +1,15 @@
-// swift-tools-version: 6.3.3
+// swift-tools-version: 6.4
 
 import PackageDescription
 
 let package = Package(
     name: "swift-byte-collection-primitives",
     platforms: [
-        .macOS("27"),
-        .iOS("27"),
-        .tvOS("27"),
-        .watchOS("27"),
-        .visionOS("27"),
+        .macOS(.v27),
+        .iOS(.v27),
+        .tvOS(.v27),
+        .watchOS(.v27),
+        .visionOS(.v27),
     ],
     products: [
         .library(
@@ -22,21 +22,30 @@ let package = Package(
         ),
     ],
     dependencies: [
-        .package(url: "https://github.com/swift-primitives/swift-byte-primitives.git", branch: "main"),
-        .package(url: "https://github.com/swift-primitives/swift-collection-primitives.git", branch: "main"),
+        .package(
+            url: "https://github.com/swift-primitives/swift-byte-primitives.git",
+            branch: "main"
+        ),
+        .package(
+            url: "https://github.com/swift-primitives/swift-collection-primitives.git",
+            branch: "main"
+        ),
     ],
     targets: [
         .target(
             name: "Byte Collection Primitives Standard Library Integration",
             dependencies: [
                 .product(name: "Byte Primitives", package: "swift-byte-primitives"),
-                .product(name: "Collection Protocol Primitives", package: "swift-collection-primitives"),
+                .product(
+                    name: "Collection Protocol Primitives",
+                    package: "swift-collection-primitives"
+                ),
             ]
         ),
         .target(
             name: "Byte Collection Primitives",
             dependencies: [
-                "Byte Collection Primitives Standard Library Integration",
+                "Byte Collection Primitives Standard Library Integration"
             ]
         ),
         .target(
@@ -44,7 +53,10 @@ let package = Package(
             dependencies: [
                 "Byte Collection Primitives",
                 .product(name: "Byte Primitives Test Support", package: "swift-byte-primitives"),
-                .product(name: "Collection Primitives Test Support", package: "swift-collection-primitives"),
+                .product(
+                    name: "Collection Primitives Test Support",
+                    package: "swift-collection-primitives"
+                ),
             ],
             path: "Tests/Support"
         ),
