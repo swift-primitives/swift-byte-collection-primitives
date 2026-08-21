@@ -1,8 +1,6 @@
 import Byte_Collection_Primitives_Test_Support
 import Testing
 
-// MARK: - Test Suite Structure
-
 extension Byte {
     @Suite struct `Collection+Byte Test` {}
 }
@@ -12,12 +10,10 @@ extension Byte.`Collection+Byte Test` {
     @Suite struct `Edge Case` {}
 }
 
-// MARK: - Unit — trimming(_ Set)
-
 extension Byte.`Collection+Byte Test`.Unit {
     @Test
     func `trimming with set removes matching bytes from both ends`() {
-        let bytes: [Byte] = [0x20, 0x48, 0x69, 0x20]  // " Hi "
+        let bytes: [Byte] = [0x20, 0x48, 0x69, 0x20]
         #expect(bytes.trimming([0x20]).elementsEqual([0x48, 0x69]))
     }
 
@@ -36,18 +32,16 @@ extension Byte.`Collection+Byte Test`.Unit {
     }
 }
 
-// MARK: - Unit — firstIndex(of: Collection)
-
 extension Byte.`Collection+Byte Test`.Unit {
     @Test
     func `firstIndex of byte subsequence returns matching position`() {
-        let haystack: [Byte] = [0x48, 0x65, 0x6C, 0x6C, 0x6F]  // "Hello"
+        let haystack: [Byte] = [0x48, 0x65, 0x6C, 0x6C, 0x6F]
         #expect(haystack.firstIndex(of: [0x6C, 0x6F]) == 3)
     }
 
     @Test
     func `firstIndex returns first match when multiple exist`() {
-        let haystack: [Byte] = [0x61, 0x62, 0x61, 0x62, 0x63]  // "ababc"
+        let haystack: [Byte] = [0x61, 0x62, 0x61, 0x62, 0x63]
         #expect(haystack.firstIndex(of: [0x61, 0x62]) == 0)
     }
 
@@ -65,8 +59,6 @@ extension Byte.`Collection+Byte Test`.Unit {
         #expect(!haystack.contains([0x6C, 0x7A]))
     }
 }
-
-// MARK: - Edge Case
 
 extension Byte.`Collection+Byte Test`.`Edge Case` {
     @Test
